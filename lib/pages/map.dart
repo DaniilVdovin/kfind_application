@@ -60,7 +60,7 @@ class MapPageState extends State<MapPage> {
         final text = districts[item];
           return ListTile(
             title: Text(text),
-            onTap: (){};
+            onTap: (){},
          );
         }
       ))) ;
