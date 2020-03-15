@@ -5,6 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
+import 'Mainmapscreen.dart';
+
 class MapPage extends StatefulWidget {
   @override
   MapPageState createState() => MapPageState();
@@ -79,14 +81,18 @@ class MapPageState extends State<MapPage> {
           child: MaterialButton(
             minWidth: MediaQuery.of(context).size.width,
             padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            onPressed: null,
+            onPressed: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => Mainmapscreen()));
+            },
             child: Text("Next",
                 textAlign: TextAlign.center,
                 style: bodyStyle.copyWith(
                     color: Colors.white, fontWeight: FontWeight.bold)),
             ),   
         );
-   return Scaffold(
+    return Scaffold(
           body: SafeArea(
                       child: Padding(
               padding: const EdgeInsets.all(20.0),

@@ -9,6 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:http/http.dart' as http;
 
+import '../Data.dart';
+import 'Mainmapscreen.dart';
 import 'map.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,12 +25,12 @@ class RegistrPage extends StatefulWidget {
 class RegistPageState extends State<RegistrPage> with SingleTickerProviderStateMixin {
     SharedPreferences prefs;
     Future<bool> _loadprefs() async {
-        prefs = await SharedPreferences.getInstance();
-        if(prefs.getString("token")!=null && prefs.getString("token")!=""){
+        Data.prefs = await SharedPreferences.getInstance();
+        if(Data.prefs.getString("token")!=null && Data.prefs.getString("token")!=""){
           setState(() {
             Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MapPage()),
+            MaterialPageRoute(builder: (context) => Mainmapscreen()),
           );
           });
           return true;
@@ -43,7 +45,7 @@ class RegistPageState extends State<RegistrPage> with SingleTickerProviderStateM
     ,passwordController= TextEditingController();
 
     Future<http.Response> reg(String login, String password, String fullname) async {
-       return await http.get('http://localhost:15950/api/register?login='+login+'&password='+password+"&fullname="+fullname);
+       return await http.get(Data.serverprefix+'api/register?login='+login+'&password='+password+"&fullname="+fullname);
     }
     void  _registrarion() {
       String token;
@@ -55,7 +57,7 @@ class RegistPageState extends State<RegistrPage> with SingleTickerProviderStateM
          //Toast.show(""+text, context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MapPage()),
+            MaterialPageRoute(builder: (context) => Mainmapscreen()),
           );
         });
       });
@@ -181,23 +183,8 @@ class LoginPageState extends State<LoginPage> {
     final 
     emailController= TextEditingController()
     ,passwordController= TextEditingController();
-    
-    SharedPreferences prefs;
-    Future<bool> _loadprefs() async {
-        prefs = await SharedPreferences.getInstance();
-        if(prefs.getString("token")!=null && prefs.getString("token")!=""){
-          setState(() {
-            Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => MapPage()),
-          );
-          });
-          return true;
-        }
-        return false;
-    }
 Future<http.Response> reg(String login, String password) async {
-   return await http.get('http://localhost:15950/api/login?login='+login+'&password='+password);
+   return await http.get(Data.serverprefix+'api/login?login='+login+'&password='+password);
     }
     void  _registrarion() {
       String token;
@@ -205,7 +192,7 @@ Future<http.Response> reg(String login, String password) async {
       reg(emailController.text,passwordController.text).then((text){
         if((token = json.decode(text.body)["token"])!=null)
       setState(() {
-          prefs.setString("token", token);
+          Data.prefs.setString("token", token);
           //oast.show("", context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
           Navigator.push(
             context,
@@ -225,7 +212,14 @@ Future<http.Response> reg(String login, String password) async {
 @override
   void initState() {
     super.initState();
-    _loadprefs();
+    if(Data.prefs.getString("token")!=null && Data.prefs.getString("token")!=""){
+          setState(() {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MapPage()),
+          );
+          });
+        }
   }
   @override
   Widget build(BuildContext context) {

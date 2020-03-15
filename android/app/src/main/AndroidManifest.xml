@@ -9,6 +9,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="kfons_search"
         android:icon="@mipmap/ic_launcher">
+         <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCEoBXO8WW93cfOJ8_gd4cpqLwaWyLjtjI"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
