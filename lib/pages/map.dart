@@ -22,7 +22,7 @@ class MapPageState extends State<MapPage> {
         return false;
     }
    void _loadListOfDistrict() async {
-      await http.get('http://192.168.43.39:15950/api/getLocations')
+      await http.get('http://localhost:15950/api/getLocations')
           .then(_proccesingLocation);
   }
   void _proccesingLocation(http.Response response){
