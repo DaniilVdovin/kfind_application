@@ -1,8 +1,8 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:toast/toast.dart';
 import 'package:http/http.dart' as http;
 
 class MapPage extends StatefulWidget {
@@ -11,17 +11,17 @@ class MapPage extends StatefulWidget {
 }
 
 class MapPageState extends State<MapPage> {
-  String curennt_city;
+  String curennt_city = "Сочи";
   
   SharedPreferences prefs;
   List<String> districts = new List();
-    Future<bool> _loadprefs() async {
+  Future<bool> _loadprefs() async {
         prefs = await SharedPreferences.getInstance();
         if(prefs!=null) 
          return true;
         return false;
     }
-   void _loadListOfDistrict() async {
+  void _loadListOfDistrict() async {
       await http.get('http://localhost:15950/api/getLocations')
           .then(_proccesingLocation);
   }
@@ -32,11 +32,6 @@ class MapPageState extends State<MapPage> {
           districts.add(v);
       });
       setState(() {});
-  }
-  void _selectlist(String s){
-    setState(() {
-      curennt_city = s;
-    });
   }
   @override
   void initState() {
@@ -53,22 +48,27 @@ class MapPageState extends State<MapPage> {
     final cypPicker =Expanded(
       child: Material(
       child: ListView.builder(
-        itemExtent: 40.0,
+        itemExtent: 48.0,
         itemCount: districts.length,
         scrollDirection: Axis.vertical,
         itemBuilder: (context,item){
         final text = districts[item];
           return ListTile(
-            title: Text(text),
-            onTap: (){},
+            title: Text(text,style: bodyStyle.copyWith(fontWeight: FontWeight.w400)),
+            onTap: (){
+            setState(() {
+                curennt_city = text;
+            });
+            },
          );
         }
-      ))) ;
+      )));
     final searchDistrict = TextField(
           obscureText: false,
+          enabled: false,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-              hintText: "City",
+              hintText: curennt_city,
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
         );
