@@ -14,32 +14,21 @@ class MapPage extends StatefulWidget {
 }
 
 class MapPageState extends State<MapPage> {
-  String curennt_city = "Сочи";
-  
-  SharedPreferences prefs;
-  List<String> districts = new List();
-  Future<bool> _loadprefs() async {
-        prefs = await SharedPreferences.getInstance();
-        if(prefs!=null) 
-         return true;
-        return false;
-    }
+  List<City> districts = [];
   void _loadListOfDistrict() async {
       await http.get(Data.serverprefix+'api/getLocations')
           .then(_proccesingLocation);
   }
   void _proccesingLocation(http.Response response){
-      var map = json.decode(utf8.decode(response.bodyBytes))["districts"];
-      map.forEach((v){
-        if(v!=null)
-          districts.add(v);
+      Map<String,dynamic> map = json.decode(utf8.decode(response.bodyBytes))["districts"];
+      map.forEach((k,v){
+        if(k!=null) districts.add(City(name: k,coordinats: v));
       });
       setState(() {});
   }
   @override
   void initState() {
     super.initState();
-    _loadprefs();
     _loadListOfDistrict();
    }
     
@@ -55,12 +44,12 @@ class MapPageState extends State<MapPage> {
         itemCount: districts.length,
         scrollDirection: Axis.vertical,
         itemBuilder: (context,item){
-        final text = districts[item];
+        final c = districts[item];
           return ListTile(
-            title: Text(text,style: bodyStyle.copyWith(fontWeight: FontWeight.w400)),
+            title: Text(c.name,style: bodyStyle.copyWith(fontWeight: FontWeight.w400)),
             onTap: (){
             setState(() {
-                curennt_city = text;
+                Data.city = c;
             });
             },
          );
@@ -71,7 +60,7 @@ class MapPageState extends State<MapPage> {
           enabled: false,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-              hintText: curennt_city,
+              hintText: Data.city.name,
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
         );
@@ -86,7 +75,10 @@ class MapPageState extends State<MapPage> {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => Mainmapscreen()));
-                Data.prefs.setString("location", curennt_city);
+
+                Data.prefs.setString("location.name", Data.city.name);
+                Data.prefs.setDouble("location.lat", Data.city.coordinats[0]);
+                Data.prefs.setDouble("location.lon", Data.city.coordinats[1]);
             },
             child: Text("Next",
                 textAlign: TextAlign.center,

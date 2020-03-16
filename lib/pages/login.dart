@@ -198,7 +198,7 @@ Future<http.Response> reg(String login, String password) async {
             MaterialPageRoute(builder: (context) => MapPage()),
           );
         });
-        Data.prefs.setString("token", token);
+       //Data.prefs.setString("token", token);
       });
       }
       else

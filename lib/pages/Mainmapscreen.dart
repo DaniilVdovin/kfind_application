@@ -117,7 +117,7 @@ class MainmapscreenStage extends State<Mainmapscreen> {
             );
     
     Completer<GoogleMapController> _controller = Completer();
-    const LatLng _center = const LatLng(43.4393335,39.9026883);
+    LatLng _center = LatLng(Data.city.coordinats[0], Data.city.coordinats[1]);
     void _onMapCreated(GoogleMapController controller) {
       _controller.complete(controller);
     }
