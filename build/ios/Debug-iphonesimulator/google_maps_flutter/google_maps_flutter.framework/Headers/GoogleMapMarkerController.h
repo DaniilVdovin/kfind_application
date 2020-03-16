@@ -6,8 +6,6 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "GoogleMapController.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 // Defines marker UI options writable from Flutter.
 @protocol FLTGoogleMapMarkerOptionsSink
 - (void)setAlpha:(float)alpha;
@@ -30,9 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initMarkerWithPosition:(CLLocationCoordinate2D)position
                               markerId:(NSString*)markerId
                                mapView:(GMSMapView*)mapView;
-- (void)showInfoWindow;
-- (void)hideInfoWindow;
-- (BOOL)isInfoWindowShown;
 - (BOOL)consumeTapEvents;
 - (void)removeMarker;
 @end
@@ -45,11 +40,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)changeMarkers:(NSArray*)markersToChange;
 - (void)removeMarkerIds:(NSArray*)markerIdsToRemove;
 - (BOOL)onMarkerTap:(NSString*)markerId;
-- (void)onMarkerDragEnd:(NSString*)markerId coordinate:(CLLocationCoordinate2D)coordinate;
 - (void)onInfoWindowTap:(NSString*)markerId;
-- (void)showMarkerInfoWindow:(NSString*)markerId result:(FlutterResult)result;
-- (void)hideMarkerInfoWindow:(NSString*)markerId result:(FlutterResult)result;
-- (void)isMarkerInfoWindowShown:(NSString*)markerId result:(FlutterResult)result;
 @end
-
-NS_ASSUME_NONNULL_END

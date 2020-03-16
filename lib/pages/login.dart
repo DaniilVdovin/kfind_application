@@ -23,7 +23,6 @@ class RegistrPage extends StatefulWidget {
 }
 
 class RegistPageState extends State<RegistrPage> with SingleTickerProviderStateMixin {
-    SharedPreferences prefs;
     Future<bool> _loadprefs() async {
         Data.prefs = await SharedPreferences.getInstance();
         if(Data.prefs.getString("token")!=null && Data.prefs.getString("token")!=""){
@@ -52,13 +51,13 @@ class RegistPageState extends State<RegistrPage> with SingleTickerProviderStateM
       if(fullnameController.text.length>0){
       reg(emailController.text,passwordController.text,fullnameController.text).then((js){
         if((token = json.decode(js.body)["token"])!=null)
-      setState(() {
-        prefs.setString("token", token);
-         //Toast.show(""+text, context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
+         Toast.show("l"+token, context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
+          setState(() {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Mainmapscreen()),
+            MaterialPageRoute(builder: (context) => MapPage()),
           );
+          Data.prefs.setString("token", token);
         });
       });
       }
@@ -102,7 +101,7 @@ class RegistPageState extends State<RegistrPage> with SingleTickerProviderStateM
                   OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
         );
     final fullNameField = TextField(
-          key: new Key("kFullname"),
+          key: Key("kFullname"),
           obscureText: false,
           style: bodyStyle,
           controller: fullnameController,
@@ -190,15 +189,16 @@ Future<http.Response> reg(String login, String password) async {
       String token;
       if(emailController.text.length>0){
       reg(emailController.text,passwordController.text).then((text){
-        if((token = json.decode(text.body)["token"])!=null)
+          Toast.show("t:"+text.body, context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
+      if((token = json.decode(text.body)["token"])!=null)
       setState(() {
-          Data.prefs.setString("token", token);
-          //oast.show("", context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
+          Toast.show("t:"+token, context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => MapPage()),
           );
         });
+        Data.prefs.setString("token", token);
       });
       }
       else
@@ -216,7 +216,7 @@ Future<http.Response> reg(String login, String password) async {
           setState(() {
             Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MapPage()),
+            MaterialPageRoute(builder: (context) => Mainmapscreen()),
           );
           });
         }

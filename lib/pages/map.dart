@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
+import '../Data.dart';
 import 'Mainmapscreen.dart';
 
 class MapPage extends StatefulWidget {
@@ -24,7 +25,7 @@ class MapPageState extends State<MapPage> {
         return false;
     }
   void _loadListOfDistrict() async {
-      await http.get('http://localhost:15950/api/getLocations')
+      await http.get(Data.serverprefix+'api/getLocations')
           .then(_proccesingLocation);
   }
   void _proccesingLocation(http.Response response){
@@ -85,6 +86,7 @@ class MapPageState extends State<MapPage> {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => Mainmapscreen()));
+                Data.prefs.setString("location", curennt_city);
             },
             child: Text("Next",
                 textAlign: TextAlign.center,

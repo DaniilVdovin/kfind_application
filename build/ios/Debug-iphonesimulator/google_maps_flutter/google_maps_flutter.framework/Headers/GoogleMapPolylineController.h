@@ -32,5 +32,4 @@
 - (void)changePolylines:(NSArray*)polylinesToChange;
 - (void)removePolylineIds:(NSArray*)polylineIdsToRemove;
 - (void)onPolylineTap:(NSString*)polylineId;
-- (bool)hasPolylineWithId:(NSString*)polylineId;
 @end
