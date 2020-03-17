@@ -2,13 +2,16 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:kfons_search/pages/Userpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:toast/toast.dart';
 import '../Data.dart';
+import 'Userpage.dart';
 
 class Mainmapscreen extends StatefulWidget {
   @override
@@ -21,11 +24,31 @@ void _loadTopicData(){
   price: "1.000.000.000P", 
   imageUrl:"https://sun1-25.userapi.com/impf/c856024/v856024912/aed20/9p-I4SjGNWA.jpg?size=400x0&quality=90&sign=038e917ccb4ce61c249f4ab191517305");
 }
+
 class MainmapscreenStage extends State<Mainmapscreen> {
+    void _loadMe() async {
+     await http.get(Data.serverprefix+'api/getme?token='+Data.token)
+        .then((response){
+          Map<String,dynamic> js = json.decode(utf8.decode(response.bodyBytes));
+          Data.user = User(
+            id:       js["id"],
+            fullname: js["fullname"],
+            login:    js["login"],
+            location: js["location"],
+            verified: js["verified"],
+            searches: js["searches"]
+            );
+          setState(() {
+            Toast.show("r:"+utf8.decode(response.bodyBytes), context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
+          });
+        });
+    }
+
   @override
   void initState() {
     super.initState();
-     _loadTopicData();
+    _loadTopicData();
+    _loadMe();
    }
     
   @override
@@ -47,6 +70,16 @@ class MainmapscreenStage extends State<Mainmapscreen> {
                     color: Colors.black45, fontWeight: FontWeight.bold)),
             ),   
         );
+    final profButton = FloatingActionButton(
+      elevation: 2.0,
+      onPressed: (){
+        Navigator.push(context,
+        MaterialPageRoute(builder:  (context)=> Userpage()));
+      },
+      child: Icon(Icons.person_outline,size: 30.0,),
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black54,
+      );
     final nawcard = SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -105,6 +138,12 @@ class MainmapscreenStage extends State<Mainmapscreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      Align(alignment: Alignment.bottomRight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: profButton,
+                        ),
+                      ),
                       Align(alignment: Alignment.bottomRight,
                         child: Padding(padding: const EdgeInsets.symmetric(horizontal: 65.0),
                           child: hmfButton,

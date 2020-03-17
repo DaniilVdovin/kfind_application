@@ -26,6 +26,9 @@ class MapPageState extends State<MapPage> {
       });
       setState(() {});
   }
+  void _postLocation() async {
+      await http.post(Data.serverprefix+'api/setLocation?location='+Data.city.name+"&token="+Data.token);
+  }
   @override
   void initState() {
     super.initState();
@@ -50,6 +53,7 @@ class MapPageState extends State<MapPage> {
             onTap: (){
             setState(() {
                 Data.city = c;
+                _postLocation();
             });
             },
          );

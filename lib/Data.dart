@@ -11,10 +11,22 @@ class City{
   dynamic coordinats;
   City({this.name,this.coordinats});
 }
+class User{
+  int id;
+  String 
+  login,
+  fullname,
+  location,
+  verified;
+  dynamic searches;
+  User({this.id,this.fullname,this.login,this.location,this.verified,this.searches});
+}
 class Data {
   static SharedPreferences prefs;
   static String serverprefix = "http://localhost:15950/";
+  static String token;
 
   static City city = City(name:"Адлер",coordinats: [43.5832281,39.991644]);
+  static User user;
   static Topic topic;
 }
