@@ -17,9 +17,10 @@ class User{
   login,
   fullname,
   location,
-  verified;
+  verified,
+  avatar;
   dynamic searches;
-  User({this.id,this.fullname,this.login,this.location,this.verified,this.searches});
+  User({this.id,this.fullname,this.login,this.location,this.verified,this.searches,this.avatar});
 }
 class Data {
   static SharedPreferences prefs;

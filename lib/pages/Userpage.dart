@@ -73,7 +73,7 @@ class UserpageState extends State<Userpage> {
                     child: CircleAvatar(
                       radius: 60,
                       backgroundImage: NetworkImage(
-                          "https://sun1-25.userapi.com/impf/c856024/v856024912/aed20/9p-I4SjGNWA.jpg?size=400x0&quality=90&sign=038e917ccb4ce61c249f4ab191517305"),
+                          Data.serverprefix+"api/getImage?token="+Data.token+"&file="+Data.user.avatar),
                       backgroundColor: Colors.transparent,
                     ),
                   ),

@@ -210,6 +210,8 @@ class LoginPageState extends State<LoginPage> {
         Toast.show("t:" + text.body, context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
         if ((token = json.decode(text.body)["token"]) != null)
+        //Data.prefs.setString("token", token);
+        Data.token = token;
           setState(() {
             Toast.show("t:" + token, context,
                 duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
@@ -218,8 +220,6 @@ class LoginPageState extends State<LoginPage> {
               MaterialPageRoute(builder: (context) => MapPage()),
             );
           });
-        //Data.prefs.setString("token", token);
-        Data.token = token;
       });
     } else {
       setState(() {

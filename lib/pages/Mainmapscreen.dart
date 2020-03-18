@@ -22,7 +22,7 @@ void _loadTopicData(){
   fullname:"Mike Marelo",
   discription: "Lost aroun KFC рядом видели бабушку",
   price: "1.000.000.000P", 
-  imageUrl:"https://sun1-25.userapi.com/impf/c856024/v856024912/aed20/9p-I4SjGNWA.jpg?size=400x0&quality=90&sign=038e917ccb4ce61c249f4ab191517305");
+  imageUrl:Data.serverprefix + "api/getImage?token="+Data.token+"&file=def.png");
 }
 
 class MainmapscreenStage extends State<Mainmapscreen> {
@@ -36,7 +36,8 @@ class MainmapscreenStage extends State<Mainmapscreen> {
             login:    js["login"],
             location: js["location"],
             verified: js["verified"],
-            searches: js["searches"]
+            searches: js["searches"],
+            avatar:   js["avatar"]
             );
           setState(() {
             Toast.show("r:"+utf8.decode(response.bodyBytes), context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);

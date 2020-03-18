@@ -16,97 +16,108 @@ class MapPage extends StatefulWidget {
 class MapPageState extends State<MapPage> {
   List<City> districts = [];
   void _loadListOfDistrict() async {
-      await http.get(Data.serverprefix+'api/getLocations')
-          .then(_proccesingLocation);
+    await http
+        .get(Data.serverprefix + 'api/getLocations')
+        .then(_proccesingLocation);
   }
-  void _proccesingLocation(http.Response response){
-      Map<String,dynamic> map = json.decode(utf8.decode(response.bodyBytes))["districts"];
-      map.forEach((k,v){
-        if(k!=null) districts.add(City(name: k,coordinats: v));
-      });
-      setState(() {});
+
+  void _proccesingLocation(http.Response response) {
+    Map<String, dynamic> map =
+        json.decode(utf8.decode(response.bodyBytes))["districts"];
+    map.forEach((k, v) {
+      if (k != null) districts.add(City(name: k, coordinats: v));
+    });
+    setState(() {});
   }
+
   void _postLocation() async {
-      await http.post(Data.serverprefix+'api/setLocation?location='+Data.city.name+"&token="+Data.token);
+    await http.post(Data.serverprefix +
+        'api/setLocation?location=' +
+        Data.city.name +
+        "&token=" +
+        Data.token);
+        _saveCity();
   }
+
+  void _saveCity() {
+    Data.prefs.setString("location.name", Data.city.name);
+    Data.prefs.setDouble("location.lat", Data.city.coordinats[0]);
+    Data.prefs.setDouble("location.lon", Data.city.coordinats[1]);
+  }
+
   @override
   void initState() {
     super.initState();
     _loadListOfDistrict();
-   }
-    
+  }
+
   @override
   Widget build(BuildContext context) {
     TextStyle bodyStyle = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
     TextStyle tistleStyle = bodyStyle.copyWith(fontSize: 30.0);
 
-    final cypPicker =Expanded(
-      child: Material(
-      child: ListView.builder(
-        itemExtent: 48.0,
-        itemCount: districts.length,
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context,item){
-        final c = districts[item];
-          return ListTile(
-            title: Text(c.name,style: bodyStyle.copyWith(fontWeight: FontWeight.w400)),
-            onTap: (){
-            setState(() {
-                Data.city = c;
-                _postLocation();
-            });
-            },
-         );
-        }
-      )));
+    final cypPicker = Expanded(
+        child: Material(
+            child: ListView.builder(
+                itemExtent: 48.0,
+                itemCount: districts.length,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context, item) {
+                  final c = districts[item];
+                  return ListTile(
+                    title: Text(c.name,
+                        style: bodyStyle.copyWith(fontWeight: FontWeight.w400)),
+                    onTap: () {
+                      setState(() {
+                        Data.city = c;
+                        _postLocation();
+                      });
+                    },
+                  );
+                })));
     final searchDistrict = TextField(
-          obscureText: false,
-          enabled: false,
-          decoration: InputDecoration(
-              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-              hintText: Data.city.name,
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
-        );
+      obscureText: false,
+      enabled: false,
+      decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          hintText: Data.city.name,
+          border:
+              OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
+    );
     final nextButton = Material(
-          elevation: 5.0,
-          borderRadius: BorderRadius.circular(15.0),
-          color: Color(0xff01A0C7),
-          child: MaterialButton(
-            minWidth: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            onPressed: (){
-              Navigator.push(
-                context, 
-                MaterialPageRoute(builder: (context) => Mainmapscreen()));
-
-                Data.prefs.setString("location.name", Data.city.name);
-                Data.prefs.setDouble("location.lat", Data.city.coordinats[0]);
-                Data.prefs.setDouble("location.lon", Data.city.coordinats[1]);
-            },
-            child: Text("Next",
-                textAlign: TextAlign.center,
-                style: bodyStyle.copyWith(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
-            ),   
-        );
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(15.0),
+      color: Color(0xff01A0C7),
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Mainmapscreen()));
+         _saveCity();
+        },
+        child: Text("Next",
+            textAlign: TextAlign.center,
+            style: bodyStyle.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
     return Scaffold(
-          body: SafeArea(
-                      child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    searchDistrict,
-                    cypPicker,
-                    nextButton,
-                  ],
-                ),
-              ),
-            ),
-          ) 
-        );
+        body: SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              searchDistrict,
+              cypPicker,
+              nextButton,
+            ],
+          ),
+        ),
+      ),
+    ));
   }
 }
