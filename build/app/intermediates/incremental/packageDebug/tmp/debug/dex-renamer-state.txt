@@ -1,4 +1,4 @@
-#Mon Mar 16 23:53:33 MSK 2020
+#Thu Mar 19 23:01:43 MSK 2020
 base.0=/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
