@@ -198,16 +198,7 @@ class MainmapscreenStage extends State<Mainmapscreen> {
         position: _center,
         )
     ]);
-    Set<Marker> markers = Set.from([  
-      Marker(
-        markerId: MarkerId(Data.city.name),
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
-        infoWindow: InfoWindow(
-          title: Data.topic.fullname,
-        ),
-        position: _center,
-        )
-    ]);
+
     void _onMapCreated(GoogleMapController controller) {
       _controller.complete(controller);
     }
