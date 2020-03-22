@@ -33,6 +33,7 @@ class RegistPageState extends State<RegistrPage>
           context,
           MaterialPageRoute(builder: (context) => Mainmapscreen()),
         );
+        Data.token = Data.prefs.getString("token");
       });
       return true;
     }
@@ -210,7 +211,7 @@ class LoginPageState extends State<LoginPage> {
         Toast.show("t:" + text.body, context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
         if ((token = json.decode(text.body)["token"]) != null)
-        //Data.prefs.setString("token", token);
+        Data.prefs.setString("token", token);
         Data.token = token;
           setState(() {
             Toast.show("t:" + token, context,

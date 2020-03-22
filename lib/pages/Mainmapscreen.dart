@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kfons_search/pages/Userpage.dart';
+import 'package:kfons_search/pages/startsearch.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
@@ -22,10 +23,7 @@ void _loadTopicData() {
       fullname: "Mike Marelo",
       discription: "Lost aroun KFC рядом видели бабушку",
       price: "1.000P",
-      imageUrl: Data.serverprefix +
-          "api/getImage?token=" +
-          Data.token +
-          "&file=def.png");
+      imageUrl: Data.serverprefix + "api/getImage?token=" + Data.token + "&file=def.png");
 }
 
 class MainmapscreenStage extends State<Mainmapscreen> {
@@ -68,7 +66,9 @@ class MainmapscreenStage extends State<Mainmapscreen> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: null,
+        onPressed: (){
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>Startsearch()));
+        },
         child: Text("Help me find !",
             textAlign: TextAlign.center,
             style: bodyStyle.copyWith(
@@ -187,7 +187,6 @@ class MainmapscreenStage extends State<Mainmapscreen> {
         radius: 500,
       )
     ]);
-
     Set<Marker> markers = Set.from([
       Marker(
         markerId: MarkerId(Data.city.name),

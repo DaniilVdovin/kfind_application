@@ -49,6 +49,12 @@ class MapPageState extends State<MapPage> {
   void initState() {
     super.initState();
     _loadListOfDistrict();
+    if(Data.prefs.getString("location.name")!=null)
+    {
+      Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Mainmapscreen()));
+    }
+
   }
 
   @override
@@ -70,7 +76,6 @@ class MapPageState extends State<MapPage> {
                     onTap: () {
                       setState(() {
                         Data.city = c;
-                        _postLocation();
                       });
                     },
                   );
@@ -94,7 +99,7 @@ class MapPageState extends State<MapPage> {
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => Mainmapscreen()));
-         _saveCity();
+          _postLocation();
         },
         child: Text("Next",
             textAlign: TextAlign.center,
