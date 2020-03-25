@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
+import 'package:flutter/animation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:toast/toast.dart';
 import '../Data.dart';
@@ -23,7 +24,10 @@ void _loadTopicData() {
       fullname: "Mike Marelo",
       discription: "Lost aroun KFC рядом видели бабушку",
       price: "1.000P",
-      imageUrl: Data.serverprefix + "api/getImage?token=" + Data.token + "&file=def.png");
+      imageUrl: Data.serverprefix +
+          "api/getImage?token=" +
+          Data.token +
+          "&file=def.png");
 }
 
 class MainmapscreenStage extends State<Mainmapscreen> {
@@ -47,6 +51,7 @@ class MainmapscreenStage extends State<Mainmapscreen> {
     });
   }
 
+  Animation<double> animation;
   @override
   void initState() {
     super.initState();
@@ -66,8 +71,9 @@ class MainmapscreenStage extends State<Mainmapscreen> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: (){
-          Navigator.push(context,MaterialPageRoute(builder: (context)=>Startsearch()));
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Startsearch()));
         },
         child: Text("Help me find !",
             textAlign: TextAlign.center,
@@ -89,59 +95,62 @@ class MainmapscreenStage extends State<Mainmapscreen> {
       foregroundColor: Colors.black54,
     );
     final nawcard = SafeArea(
-        child: Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.135,
-        child: Material(
-            elevation: 2.0,
-            borderRadius: BorderRadius.circular(15.0),
-            color: Colors.white,
-            child: Container(
-              margin: EdgeInsets.all(10.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
-                    child: Image.network(
-                      Data.topic.imageUrl,
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Stack(overflow: Overflow.visible, children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(Data.topic.fullname,
-                              style: tistleStyle.copyWith(
-                                  fontWeight: FontWeight.w800, fontSize: 18.0)),
-                          SizedBox(height: 5.0),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            child: Text(Data.topic.discription,
-                                style: bodyStyle.copyWith(fontSize: 16.0),
-                                textAlign: TextAlign.left),
-                          ),
-                        ],
+        child: Container(
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.135,
+          child: Material(
+              elevation: 2.0,
+              borderRadius: BorderRadius.circular(15.0),
+              color: Colors.white,
+              child: Container(
+                margin: EdgeInsets.all(10.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.network(
+                        Data.topic.imageUrl,
+                        width: 100,
+                        height: 100,
                       ),
-                      Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(Data.topic.price,
-                              style: tistleStyle.copyWith(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 18.0)))
-                    ]),
-                  )
-                ],
-              ),
-            )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Stack(overflow: Overflow.visible, children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(Data.topic.fullname,
+                                style: tistleStyle.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 18.0)),
+                            SizedBox(height: 5.0),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.6,
+                              child: Text(Data.topic.discription,
+                                  style: bodyStyle.copyWith(fontSize: 16.0),
+                                  textAlign: TextAlign.left),
+                            ),
+                          ],
+                        ),
+                        Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(Data.topic.price,
+                                style: tistleStyle.copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 18.0)))
+                      ]),
+                    )
+                  ],
+                ),
+              )),
+        ),
       ),
     ));
     final ui = SafeArea(
@@ -195,7 +204,7 @@ class MainmapscreenStage extends State<Mainmapscreen> {
           title: Data.topic.fullname,
         ),
         position: _center,
-        )
+      )
     ]);
 
     void _onMapCreated(GoogleMapController controller) {

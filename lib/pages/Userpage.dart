@@ -104,8 +104,7 @@ class UserpageState extends State<Userpage> {
                             fontWeight: FontWeight.bold)),
                   ]),
                   SizedBox(height: 10.0),
-                  //singUpButon,
-                  SizedBox(height: 15.0),
+
                 ],
               ),
             ),

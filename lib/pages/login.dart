@@ -71,6 +71,7 @@ class RegistPageState extends State<RegistrPage>
             MaterialPageRoute(builder: (context) => MapPage()),
           );
           Data.prefs.setString("token", token);
+          Data.token = token;
         });
       });
     } else {

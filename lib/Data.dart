@@ -12,12 +12,11 @@ class City{
   City({this.name,this.coordinats});
 }
 class User{
-  int id;
+  int id,verified;
   String 
   login,
   fullname,
   location,
-  verified,
   avatar;
   dynamic searches;
   User({this.id,this.fullname,this.login,this.location,this.verified,this.searches,this.avatar});

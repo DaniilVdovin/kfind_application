@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:toast/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -56,12 +58,27 @@ class StartsearchState extends State<Startsearch> {
       );
     }
 
+    Completer<GoogleMapController> _controller = Completer();
+    LatLng _center = LatLng(Data.city.coordinats[0], Data.city.coordinats[1]);
+    void _onMapCreated(GoogleMapController controller) {
+      _controller.complete(controller);
+    }
+
+    final map = GoogleMap(
+      mapType: MapType.hybrid,
+      onMapCreated: _onMapCreated,
+      initialCameraPosition: CameraPosition(
+        target: _center,
+        zoom: 11.0,
+      ),
+    );
+
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
+          child: ListView(scrollDirection: Axis.vertical, children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -81,25 +98,50 @@ class StartsearchState extends State<Startsearch> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10.0),
-                  _getBox([
-                    MaterialButton(
-                      height: 320.0,
+                  SizedBox(height: 25.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: MaterialButton(
+                      color: Colors.transparent,
                       onPressed: null,
-                      child: Image(image: AssetImage('def.png')),
-                    )
-                  ]),
-                  SizedBox(height: 10.0),
-                  _getBox([
-                    _getEntered("Full name"),
-                    SizedBox(height: 10.0),
-                    _getEntered("Remuneration"),
-                  ]),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15.0),
+                          child: Image(image: AssetImage('def.png'))),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: _getBox([
+                      _getEntered("Full name"),
+                      SizedBox(height: 10.0),
+                      _getEntered("Remuneration"),
+                      SizedBox(height: 15.0),
+                      SizedBox(height: 25.0),
+                      Material(
+                          elevation: 5.0,
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: Colors.redAccent,
+                          child: MaterialButton(
+                            minWidth: MediaQuery.of(context).size.width,
+                            padding:
+                                EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                            onPressed: () {
+                              setState(() {});
+                            },
+                            child: Text("Help me find !",
+                                textAlign: TextAlign.center,
+                                style: bodyStyle.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold)),
+                          ))
+                    ]),
+                  ),
                   SizedBox(height: 15.0),
                 ],
               ),
             ),
-          ),
+          ]),
         ),
       ),
     );

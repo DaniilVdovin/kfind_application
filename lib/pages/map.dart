@@ -15,6 +15,7 @@ class MapPage extends StatefulWidget {
 
 class MapPageState extends State<MapPage> {
   List<City> districts = [];
+  bool _selected = false;
   void _loadListOfDistrict() async {
     await http
         .get(Data.serverprefix + 'api/getLocations')
@@ -36,7 +37,7 @@ class MapPageState extends State<MapPage> {
         Data.city.name +
         "&token=" +
         Data.token);
-        _saveCity();
+    _saveCity();
   }
 
   void _saveCity() {
@@ -49,19 +50,16 @@ class MapPageState extends State<MapPage> {
   void initState() {
     super.initState();
     _loadListOfDistrict();
-    if(Data.prefs.getString("location.name")!=null)
-    {
-      Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Mainmapscreen()));
+    if (Data.prefs.getString("location.") != null) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Mainmapscreen()));
     }
-
   }
 
   @override
   Widget build(BuildContext context) {
     TextStyle bodyStyle = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
     TextStyle tistleStyle = bodyStyle.copyWith(fontSize: 30.0);
-
     final cypPicker = Expanded(
         child: Material(
             child: ListView.builder(
@@ -76,6 +74,7 @@ class MapPageState extends State<MapPage> {
                     onTap: () {
                       setState(() {
                         Data.city = c;
+                        _selected = true;
                       });
                     },
                   );
@@ -89,24 +88,6 @@ class MapPageState extends State<MapPage> {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(10.0))),
     );
-    final nextButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(15.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Mainmapscreen()));
-          _postLocation();
-        },
-        child: Text("Next",
-            textAlign: TextAlign.center,
-            style: bodyStyle.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -118,7 +99,30 @@ class MapPageState extends State<MapPage> {
             children: [
               searchDistrict,
               cypPicker,
-              nextButton,
+              Material(
+                animationDuration: Duration(seconds: 1),
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: _selected ? Color(0xff01A0C7) : Colors.grey,
+                  child: AbsorbPointer(
+                    absorbing: !_selected,
+                    child: MaterialButton(
+                      minWidth: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                builder: (context) => Mainmapscreen()));
+                        _postLocation();
+                      },
+                      child: Text("Next",
+                          textAlign: TextAlign.center,
+                          style: bodyStyle.copyWith(
+              color: Colors.white, fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
