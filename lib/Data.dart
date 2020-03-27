@@ -1,5 +1,4 @@
 
-import 'dart:ffi';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Topic {
@@ -23,7 +22,7 @@ class User{
 }
 class Data {
   static SharedPreferences prefs;
-  static String serverprefix = "http://192.168.1.3:15950/";
+  static String serverprefix = "http://localhost:15950/";
   static String token;
 
   static City city = City(name:"Адлер",coordinats: [43.5832281,39.991644]);

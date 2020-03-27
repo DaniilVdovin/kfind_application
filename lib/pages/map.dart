@@ -1,7 +1,5 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
@@ -59,7 +57,6 @@ class MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     TextStyle bodyStyle = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-    TextStyle tistleStyle = bodyStyle.copyWith(fontSize: 30.0);
     final cypPicker = Expanded(
         child: Material(
             child: ListView.builder(
@@ -101,28 +98,28 @@ class MapPageState extends State<MapPage> {
               cypPicker,
               Material(
                 animationDuration: Duration(seconds: 1),
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(15.0),
-                  color: _selected ? Color(0xff01A0C7) : Colors.grey,
-                  child: AbsorbPointer(
-                    absorbing: !_selected,
-                    child: MaterialButton(
-                      minWidth: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                builder: (context) => Mainmapscreen()));
-                        _postLocation();
-                      },
-                      child: Text("Next",
-                          textAlign: TextAlign.center,
-                          style: bodyStyle.copyWith(
-              color: Colors.white, fontWeight: FontWeight.bold)),
-                    ),
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(15.0),
+                color: _selected ? Color(0xff01A0C7) : Colors.grey,
+                child: AbsorbPointer(
+                  absorbing: !_selected,
+                  child: MaterialButton(
+                    minWidth: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Mainmapscreen()));
+                      _postLocation();
+                    },
+                    child: Text("Next",
+                        textAlign: TextAlign.center,
+                        style: bodyStyle.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
                   ),
                 ),
+              ),
             ],
           ),
         ),

@@ -1,16 +1,15 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kfons_search/pages/Userpage.dart';
 import 'package:kfons_search/pages/startsearch.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/animation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:toast/toast.dart';
+
 import '../Data.dart';
 import 'Userpage.dart';
 
@@ -37,13 +36,13 @@ class MainmapscreenStage extends State<Mainmapscreen> {
         .then((response) {
       Map<String, dynamic> js = json.decode(utf8.decode(response.bodyBytes));
       Data.user = User(
-          id: js["id"],
+          id:       js["id"],
           fullname: js["fullname"],
-          login: js["login"],
+          login:    js["login"],
           location: js["location"],
           verified: js["verified"],
           searches: js["searches"],
-          avatar: js["avatar"]);
+          avatar:   js["avatar"]);
       setState(() {
         Toast.show("r:" + utf8.decode(response.bodyBytes), context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
@@ -223,7 +222,7 @@ class MainmapscreenStage extends State<Mainmapscreen> {
     );
 
     return Scaffold(
-        body: Stack(children: [
+      body: Stack(children: [
       map,
       ui,
       nawcard,

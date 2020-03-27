@@ -42,6 +42,12 @@ class UserpageState extends State<Userpage> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        title: Text("Profile",
+            style: tistleStyle.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -51,29 +57,17 @@ class UserpageState extends State<Userpage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Expanded(
-                    flex: 0,
-                    child: Row(
-                      children: <Widget>[
-                        BackButton(
-                          color: Colors.black54,
-                        ),
-                        SizedBox(width: 75.0),
-                        Text("Profile",
-                            style: tistleStyle.copyWith(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ),
                   SizedBox(height: 10.0),
                   Material(
                     borderRadius: BorderRadius.circular(60.0),
                     elevation: 6.0,
                     child: CircleAvatar(
                       radius: 60,
-                      backgroundImage: NetworkImage(
-                          Data.serverprefix+"api/getImage?token="+Data.token+"&file="+Data.user.avatar),
+                      backgroundImage: NetworkImage(Data.serverprefix +
+                          "api/getImage?token=" +
+                          Data.token +
+                          "&file=" +
+                          Data.user.avatar),
                       backgroundColor: Colors.transparent,
                     ),
                   ),
@@ -104,7 +98,6 @@ class UserpageState extends State<Userpage> {
                             fontWeight: FontWeight.bold)),
                   ]),
                   SizedBox(height: 10.0),
-
                 ],
               ),
             ),

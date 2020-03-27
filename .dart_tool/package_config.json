@@ -104,6 +104,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "image_picker",
+      "rootUri": "file:///Users/daniilvdovin/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.3+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///Users/daniilvdovin/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.6",
       "packageUri": "lib/",
@@ -236,7 +242,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-03-25T06:04:53.167113Z",
+  "generated": "2020-03-26T06:05:20.337092Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }

@@ -1,18 +1,14 @@
 import 'dart:async';
-import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:toast/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:image_picker/image_picker.dart';
 
 import '../Data.dart';
-import 'Mainmapscreen.dart';
-import 'map.dart';
 
 class Startsearch extends StatefulWidget {
   @override
@@ -20,6 +16,16 @@ class Startsearch extends StatefulWidget {
 }
 
 class StartsearchState extends State<Startsearch> {
+  File _image;
+
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      _image = image;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -67,6 +73,7 @@ class StartsearchState extends State<Startsearch> {
     final map = GoogleMap(
       mapType: MapType.hybrid,
       onMapCreated: _onMapCreated,
+      myLocationButtonEnabled: false,
       initialCameraPosition: CameraPosition(
         target: _center,
         zoom: 11.0,
@@ -74,6 +81,12 @@ class StartsearchState extends State<Startsearch> {
     );
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        title: Text("Start search",
+            style: tistleStyle.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
       body: SafeArea(
         child: Center(
           child: ListView(scrollDirection: Axis.vertical, children: [
@@ -83,27 +96,13 @@ class StartsearchState extends State<Startsearch> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Expanded(
-                    flex: 0,
-                    child: Row(
-                      children: <Widget>[
-                        BackButton(
-                          color: Colors.black54,
-                        ),
-                        SizedBox(width: 55.0),
-                        Text("Start search",
-                            style: tistleStyle.copyWith(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ),
                   SizedBox(height: 25.0),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: MaterialButton(
                       color: Colors.transparent,
-                      onPressed: null,
+                      elevation: 0.0,
+                      onPressed: getImage,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(15.0),
                           child: Image(image: AssetImage('def.png'))),
@@ -117,6 +116,12 @@ class StartsearchState extends State<Startsearch> {
                       SizedBox(height: 10.0),
                       _getEntered("Remuneration"),
                       SizedBox(height: 15.0),
+                      Container(
+                        height: 140.0,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: map),
+                      ),
                       SizedBox(height: 25.0),
                       Material(
                           elevation: 5.0,
