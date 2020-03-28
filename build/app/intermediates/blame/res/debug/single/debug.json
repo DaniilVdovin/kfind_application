@@ -9,7 +9,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-hdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
@@ -21,19 +21,19 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-v21/notification_action_background.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable/notification_icon_background.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
@@ -41,7 +41,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -49,7 +49,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -57,7 +57,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout/notification_template_part_time.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light.xml.flat",
@@ -73,11 +73,11 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout_notification_action.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout/notification_action.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout/notification_action.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
@@ -93,19 +93,23 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/5ac9ad6f13ea0190a3570ea7a43d9f59/play-services-base-17.0.0/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
+        "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/image_picker/intermediates/packaged_res/debug/xml/flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
@@ -125,7 +129,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-mdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_standard_color_18.png.flat",
@@ -133,11 +137,11 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout/notification_action_tombstone.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout/notification_action_tombstone.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout/notification_template_part_chronometer.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/color_common_google_signin_btn_text_dark.xml.flat",
@@ -169,11 +173,11 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_template_custom_big.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout-v21/notification_template_custom_big.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable/notification_bg.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable/notification_bg.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
@@ -181,7 +185,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_action.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout-v21/notification_action.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
@@ -197,11 +201,11 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_notification_bg_low.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable/notification_bg_low.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable/notification_bg_low.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
@@ -209,19 +213,19 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_template_icon_group.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout-v21/notification_template_icon_group.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -241,7 +245,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v16/notification_template_custom_big.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout-v16/notification_template_custom_big.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",
@@ -273,7 +277,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout/notification_template_icon_group.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout/notification_template_icon_group.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_disabled.xml.flat",
@@ -285,7 +289,7 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
@@ -305,11 +309,11 @@
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_action_tombstone.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/layout-v21/notification_action_tombstone.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
-        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable/notification_tile_bg.xml"
+        "source": "/Users/daniilvdovin/.gradle/caches/transforms-2/files-2.1/fecc98e05c7ccd4a0eedf7cff343a233/core-1.0.2/res/drawable/notification_tile_bg.xml"
     },
     {
         "merged": "/Users/daniilvdovin/Documents/GitHub/flutter_project/kfind_application/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",

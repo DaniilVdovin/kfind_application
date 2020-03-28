@@ -23,9 +23,15 @@ class StartsearchState extends State<Startsearch> {
 
     setState(() {
       _image = image;
+      sendImage();
     });
   }
-
+  Future sendImage() async {
+      http.MultipartRequest('POST',Uri.parse(Data.serverprefix+"api/upload"))
+      ..headers["token"]=Data.token
+      ..files.add(await http.MultipartFile.fromPath("storage",_image.path,filename: "searches_"+Data.token+".jpg"))
+      ..send();
+  }
   @override
   void initState() {
     super.initState();
